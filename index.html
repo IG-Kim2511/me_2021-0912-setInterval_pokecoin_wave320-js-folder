@@ -5,8 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+    .btn {
+        font-size: 2rem;
+      }
+    .box {
+        width: 10vw;
+        height: 10vh;
+        background-color: lightcyan;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 1000px;
+    }
+    .poke{
+        
+    }
+    </style>
 </head>
 <body>
+    <section>
+        <h2>stoping poke coin wave</h2>
+        <h3>let's click button over 20 times</h3>
+        <button class="btn">Cancel setInterval</button>
+        <div class="number">0</div>
+        <div class="box"></div>
+    </section>
+
+    <script>
+        let timeId;
+        let n = 0;    /* 🍉js 50 */
+
+        const btn = document.querySelector(".btn");
+        const box = document.querySelector(".box");
+        const number = document.querySelector(".number");
+
+        /* 🦄 setInterval ,  0.1초에 한번 실행 */
+        timeId = setInterval(pokeHandler, 100); 
     
+        // function
+        function pokeHandler() {
+           let div = document.createElement('div');
+            div.className = "poke";
+            div.innerHTML = `
+                <img src="./img/Pokecoin.png" alt="">            
+            `;          
+            box.append(div);
+        }   
+
+        // event , clearInterval
+        btn.addEventListener("click", function () {
+            n++;    /* 🍉js 50 */
+            number.innerHTML=`${n}`;
+         
+            if (n > 20) {
+                clearInterval(timeId);  /* clearInterval */
+          }
+        });
+    </script>
+
 </body>
 </html>
