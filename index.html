@@ -7,18 +7,31 @@
     <title>Document</title>
 
     <style>
+        body{
+            text-align: center;
+        }
+
     .btn {
         font-size: 2rem;
       }
     .box {
         width: 10vw;
-        height: 10vh;
-        background-color: lightcyan;
+        height: 10vh;        
 
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        max-width: 1000px;
+        display:block;
+        margin: auto;
+        padding: 2rem;
+    }
+    
+    .fixed{
+        position: fixed;
+        top: 0;
+        left: 100px;
+    }
+
+    .number{
+        font-size: 2rem;
+        margin-left: 2rem;
     }
     .poke{
         
@@ -26,13 +39,13 @@
     </style>
 </head>
 <body>
-    <section>
+    <section class="fixed">
         <h2>stoping poke coin wave</h2>
         <h3>let's click button over 20 times</h3>
         <button class="btn">Cancel setInterval</button>
-        <div class="number">0</div>
-        <div class="box"></div>
+        <span class="number">0</span>
     </section>
+    <div class="box"></div>
 
     <script>
         let timeId;
